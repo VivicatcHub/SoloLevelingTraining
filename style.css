@@ -1,3 +1,352 @@
-* {
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Pour centrer la div verticalement */
+    background-image: url('images.jpg');
+    background-size: cover;
+    /* Ajuste la taille de l'image pour couvrir tout l'élément */
+    background-position: center;
+    /* Centre l'image */
+}
+
+.titre {
+    text-align: center;
+    opacity: 0.7;
+    background-color: #2e6994;
+    color: white;
+    padding: 15px;
+}
+
+.bleu {
+    display: flex;
+}
+
+.container {
+    opacity: 0.7;
+    background-color: #2e6994;
+    color: white;
+    height: 80vh;
+    width: calc((80vh * 13) / 22);
+    padding: 25px;
+    box-sizing: border-box;
+    /* Inclut le padding dans la taille de l'élément */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Masque le contenu qui dépasse */
+    font-size: large;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.MissionsInv {
+    display: grid;
+    grid-template-columns: 0.7fr 0.8fr 1.5fr;
+    grid-template-rows: 1fr 2.5fr 2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "HeadInv HeadInv HeadInv"
+        "MIDInv MIDInv MIDInv"
+        "BodyInv BodyInv BodyInv";
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Ajoute des barres de défilement si nécessaire */
+    box-sizing: border-box;
+}
+
+.Missions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Head Head Head"
+        "MID MID MID"
+        "Body Body Body";
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Ajoute des barres de défilement si nécessaire */
+    box-sizing: border-box;
+}
+
+.HeadInv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". Boo Box2"
+        "Box1 Box1 Box1";
+    grid-area: HeadInv;
+}
+
+.Head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.7fr 1.4fr 0.9fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". Boo Box2"
+        "Box1 Box1 Box1"
+        "Box3 Box3 Box3";
+    grid-area: Head;
+}
+
+.Boo {
+    justify-self: center;
+    align-self: end;
+    grid-area: Boo;
+}
+
+.Boo img {
+    width: 100px;
+}
+
+.Box1 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-self: center;
+    align-self: start;
+    grid-area: Box1;
+    border-top: 2px solid #72a9bc;
+    /* Bordure en haut bleue */
+    border-bottom: 2px solid #72a9bc;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Box2 {
+    justify-self: center;
+    align-self: center;
+    grid-area: Box2;
+}
+
+.Box3 {
+    justify-self: center;
+    align-self: center;
+    grid-area: Box3;
+    text-align: center;
+}
+
+.MIDInv {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1.5fr;
+    grid-template-rows: 2.7fr 1.2fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "Box12 Box12 Box13"
+        "Box12 Box12 Box13"
+        "Box12 Box12 Box13";
+    grid-area: MIDInv;
+}
+
+.MID {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 0.9fr;
+    grid-template-rows: 0.8fr 1.2fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "Box4 Box4 Box4"
+        "Box5 Box5 Box6"
+        "Box5 Box5 Box6";
+    grid-area: MID;
+}
+
+button {
+    background-color: #2e6994;
+    color: white;
+    border: 0;
+    transition: color 0.3s ease;
+    font-size: large;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #72a9bc;
+}
+
+.Box4 {
+    color: #98ec6f;
+    justify-self: center;
+    align-self: center;
+    grid-area: Box4;
+}
+
+.Box5 {
+    line-height: 2;
+    justify-self: start;
+    align-self: center;
+    grid-area: Box5;
+}
+
+.Box6 {
+    line-height: 2;
+    justify-self: end;
+    align-self: center;
+    grid-area: Box6;
+}
+
+.BodyInv {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "Box1011 Box1011 Box1011"
+        "Box9 Box9 Box9";
+    grid-area: BodyInv;
+}
+
+.Body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". . ."
+        "Box7 Box7 Box7"
+        ". Box8 .";
+    grid-area: Body;
+}
+
+.Box7 {
+    justify-self: center;
+    align-self: center;
+    grid-area: Box7;
+}
+
+.Box8 {
+    font-size: xxx-large;
+    justify-self: center;
+    align-self: center;
+    grid-area: Box8;
+}
+
+.Box9 {
+    padding-right: 15px;
+    justify-self: end;
+    align-self: center;
+    grid-area: Box9;
+}
+
+.Box1011 {
+    text-align: right;
+    line-height: 2;
+    border-top: 2px solid #72a9bc;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #72a9bc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "Box10 Box11";
+    grid-area: Box1011;
+}
+
+.Box10 {
+    justify-self: center;
+    align-self: start;
+    grid-area: Box10;
+}
+
+.Box11 {
+    justify-self: center;
+    align-self: start;
+    grid-area: Box11;
+}
+
+.Box12 {
+    line-height: 2;
+    justify-self: center;
+    align-self: start;
+    grid-area: Box12;
+}
+
+.Box13 {
+    line-height: 2;
+    justify-self: center;
+    align-self: start;
+    grid-area: Box13;
+}
+
+/* Coin supérieur gauche */
+.container .top-left {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    /* Largeur originale */
+    height: 100px;
+    /* Hauteur originale */
+    background-image: url('coin.png');
+    /* Insérez le chemin de votre image */
+    background-size: cover;
+}
+
+/* Coin supérieur droit */
+.container .top-right {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    /* Largeur originale */
+    height: 100px;
+    /* Hauteur originale */
+    background-image: url('coin.png');
+    /* Insérez le chemin de votre image */
+    background-size: cover;
+    transform: rotate(90deg);
+    /* Tourner l'image de 90 degrés */
+}
+
+/* Coin inférieur gauche */
+.container .bottom-left {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    /* Largeur originale */
+    height: 100px;
+    /* Hauteur originale */
+    background-image: url('coin.png');
+    /* Insérez le chemin de votre image */
+    background-size: cover;
+    transform: rotate(-90deg);
+    /* Tourner l'image de -90 degrés */
+}
+
+/* Coin inférieur droit */
+.container .bottom-right {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    /* Largeur originale */
+    height: 100px;
+    /* Hauteur originale */
+    background-image: url('coin.png');
+    /* Insérez le chemin de votre image */
+    background-size: cover;
+    transform: rotate(180deg);
+    /* Tourner l'image de 180 degrés */
 }

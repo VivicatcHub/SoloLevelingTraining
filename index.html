@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solo Leveling Training</title>
     <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
+
 <body>
-    <h1>Solo Leveling Training</h1>
+    <div class="titre">
+        <h1>Solo Leveling Training</h1>
+    </div>
+    <button id="reboot" onclick="reboot()">REBOOT</button>
+    <div class="bleu">
+        <div class="container">
+            <div class="top-left"></div>
+            <div class="top-right"></div>
+            <div class="bottom-left"></div>
+            <div class="bottom-right"></div>
+            <div class="Missions">
+                <div class="Head">
+                    <div class="Boo"><img src="boo.png"></div>
+                    <div class="Box1"><i class="fi fi-rr-exclamation"></i> INFORMATIONS SUR LA QUÊTE</div>
+                    <div class="Box2">- X</div>
+                    <div class="Box3">QUÊTE QUOTIDIENNE : ENTRAÎNEMENT POUR<br>DEVENIR UN GRAND GUERRIER</div>
+                </div>
+                <div class="MID">
+                    <div class="Box4">OBJECTIFS</div>
+                    <div class="Box5">- POMPES<br>- ABDOS<br>- SQUATS<br>- COURSE</div>
+                    <div class="Box6"><button class="daily-button" id="daily-button-Pompes"
+                            onclick="handleClick('Pompes')">[0/100]</button><br><button class="daily-button"
+                            id="daily-button-Abdos" onclick="handleClick('Abdos')">[0/100]</button><br><button
+                            class="daily-button" id="daily-button-Squats"
+                            onclick="handleClick('Squats')">[0/100]</button><br><button class="daily-button"
+                            id="daily-button-Course" onclick="handleClick('Course')">[0/10min]</button></div>
+                </div>
+                <div class="Body">
+                    <div class="Box7">
+                        <span style="color: red;">ATTENTION !</span> SI LE PROGRAMME N'EST PAS<br>RESPECTÉ, VOUS
+                        RECEVREZ
+                        UNE SANCTION
+                    </div>
+                    <div class="Box8" id="dynamicText"><i class="fi fi-rr-stopwatch"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="top-left"></div>
+            <div class="top-right"></div>
+            <div class="bottom-left"></div>
+            <div class="bottom-right"></div>
+            <div class="MissionsInv">
+                <div class="HeadInv">
+                    <div class="Box2">- X</div>
+                    <div class="Box1">STATUT</div>
+                    <div class="Boo"><img src="boo.png"></div>
+                </div>
+                <div class="MIDInv">
+                    <div class="Box12">
+                        <span id="Nom">NOM : <span id="name">SUNG JIN WOO</span> <button onclick="ModifNom()"><i
+                                    class="fi fi-rr-settings" style="font-size: x-small"></i></button></span><br>
+                        <span id="Classe">CLASSE : <span id="class">AUCUN</span></span><br>
+                        <span id="Titre">TITRE : <span id="title">AUCUN</span></span><br>
+                        <span id="Rang">RANG : <span id="rank">E</span></span><br>
+                        <span id="HP">HP : <span id="hp">100</span></span><br>
+                        <hr>
+                        <span id="MP">MP : <span id="mp">10</span></span>
+                    </div>
+                    <div class="Box13">
+                        <span id="Niveau">NIVEAU : <span id="level">1</span></span><br>
+                        <span id="Fatigue">FATIGUE : <span id="fatigue">0</span></span>
+                    </div>
+                </div>
+                <div class="BodyInv">
+                    <div class="Box9"><button id="pt-dispo" onclick="LevelUp()">POINTS DISPONIBLES : 0</button></div>
+                    <div class="Box1011">
+                        <div class="Box10"><span id="Force">FORCE : <span id="number">16</span></span><br><span
+                                id="Agilité">AGILITÉ : <span id="number">10</span></span><br><span
+                                id="Perception">PERCEPTION : <span id="number">10</span></span></div>
+                        <div class="Box11"><span id="Endurance">ENDURANCE : <span id="number">10</span></span><br><span
+                                id="Intelligence">INTELLIGENCE : <span id="number">10</span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
