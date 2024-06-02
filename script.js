@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function ModifNom() {
-    var userInput = prompt("Votre nom de chasseur:", "Sung Jin Woo");
+    var userInput = prompt("Votre nom de chasseur:", "SUNG JIN-WOO");
     localStorage.setItem('Name', userInput);
     document.getElementById("name").textContent = userInput;
 }
@@ -48,7 +48,7 @@ function ChangeColor() {
             <div class="Box28">
                 <span id="Endurance">ENDURANCE : <span id="number">${formatNumberWithSpaces(localStorage.getItem('Endurance'))}</span></span><br>
                 <span id="Intelligence">INTELLIGENCE : <span id="number">${formatNumberWithSpaces(localStorage.getItem('Intelligence'))}</span></span><br>
-                <button id="pt-dispo" onclick="LevelUp()">AP : <span id="ap">0</span></button>
+                <button id="pt-dispo" onclick="LevelUp()">AP : <span id="ap">${formatNumberWithSpaces(localStorage.getItem('Ap'))}</span></button>
             </div>
             <div class="Box29">
             </div>
@@ -97,6 +97,10 @@ function checkDatas() {
     if (INTELLIGENCE === null) {
         localStorage.setItem('Intelligence', 10);
     }
+    AP = localStorage.getItem('Ap');
+    if (AP === null) {
+        localStorage.setItem('Ap', 0);
+    }
     LEVEL = localStorage.getItem('Level');
     if (LEVEL === null) {
         localStorage.setItem('Level', 1);
@@ -110,6 +114,7 @@ function checkDatas() {
     document.getElementById("hp").textContent = formatNumberWithSpaces(localStorage.getItem('Hp'));
     document.getElementById("mp").textContent = formatNumberWithSpaces(localStorage.getItem('Mp'));
     document.getElementById("level").textContent = formatNumberWithSpaces(localStorage.getItem('Level'));
+    document.getElementById("ap").textContent = formatNumberWithSpaces(localStorage.getItem('Ap'));
 
     document.getElementById("Force").querySelector("#number").textContent = formatNumberWithSpaces(localStorage.getItem('Force'));
     document.getElementById("Agilité").querySelector("#number").textContent = formatNumberWithSpaces(localStorage.getItem('Agilité'));
@@ -147,7 +152,8 @@ function handleClick(TYPE) {
     if (compteur === 4) {
         buttonlvlup = document.getElementById("pt-dispo");
         buttonlvlup.disabled = false;
-        document.getElementById("ap").textContent = 3;
+        document.getElementById("ap").textContent = parseInt(localStorage.getItem("Ap")) + 3;
+        localStorage.setItem("Ap", parseInt(localStorage.getItem("Ap")) + 3)
         document.getElementById("reboot").disabled = true;
     }
 }
@@ -200,11 +206,14 @@ function formatNumberWithSpaces(x) {
 }
 
 function LevelUp() {
+    buttonlvlup = document.getElementById("pt-dispo");
+    buttonlvlup.disabled = true;
+    document.getElementById("ap").textContent = 0;
     document.getElementById("fatigue").textContent = 0;
-    newLevel = parseInt(LEVEL) + 1
+    newLevel = parseInt(localStorage.getItem('Level')) + 1
     document.getElementById("level").textContent = newLevel;
     localStorage.setItem('Level', newLevel);
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= localStorage.getItem('Ap'); i++) {
         var randomNumber = getRandomInt(1, 5);
         switch (randomNumber) {
             case 1:
@@ -235,10 +244,8 @@ function LevelUp() {
 
         }
     }
-    buttonlvlup = document.getElementById("pt-dispo");
-    buttonlvlup.disabled = true;
-    document.getElementById("ap").textContent = 0;
 
+    localStorage.setItem("Ap", 0)
     localStorage.setItem('Hp', 100 + ((newLevel - 1) * 475));
     document.getElementById("hp").textContent = formatNumberWithSpaces(100 + ((newLevel - 1) * 475));
     localStorage.setItem('Mp', 10 + ((newLevel - 1) * 330));
@@ -277,7 +284,6 @@ function LevelUp() {
         localStorage.setItem('Rank', "Nation");
         document.getElementById("rank").textContent = "Nation";
     }
-
 }
 
 function updateTextColor() {
