@@ -13,8 +13,8 @@
 <body>
     <div class="titre">
         <h1>Solo Leveling Training</h1>
+        <button id="reboot" onclick="reboot()"><span>REBOOT</span></button>
     </div>
-    <button id="reboot" onclick="reboot()">REBOOT</button>
     <div class="bleu">
         <div class="container">
             <div class="top-left"></div>
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="container2">
             <div class="top-left"></div>
             <div class="top-right"></div>
             <div class="bottom-left"></div>
@@ -65,7 +65,6 @@
                         <span id="Nom">NOM : <span id="name">SUNG JIN WOO</span> <button onclick="ModifNom()"><i
                                     class="fi fi-rr-settings" style="font-size: x-small"></i></button></span><br>
                         <span id="Classe">CLASSE : <span id="class">AUCUN</span></span><br>
-                        <span id="Titre">TITRE : <span id="title">AUCUN</span></span><br>
                         <span id="Rang">RANG : <span id="rank">E</span></span><br>
                         <span id="HP">HP : <span id="hp">100</span></span><br>
                         <hr>
@@ -77,13 +76,19 @@
                     </div>
                 </div>
                 <div class="BodyInv">
-                    <div class="Box9"><button id="pt-dispo" onclick="LevelUp()">POINTS DISPONIBLES : 0</button></div>
+                    <div class="Box9">
+                        <button id="pt-dispo" onclick="LevelUp()">POINTS DISPONIBLES : <span id="ap">0</span></button>
+                    </div>
                     <div class="Box1011">
-                        <div class="Box10"><span id="Force">FORCE : <span id="number">16</span></span><br><span
-                                id="Agilité">AGILITÉ : <span id="number">10</span></span><br><span
-                                id="Perception">PERCEPTION : <span id="number">10</span></span></div>
-                        <div class="Box11"><span id="Endurance">ENDURANCE : <span id="number">10</span></span><br><span
-                                id="Intelligence">INTELLIGENCE : <span id="number">10</span></span></div>
+                        <div class="Box10">
+                            <span id="Force">FORCE : <span id="number">16</span></span><br>
+                            <span id="Agilité">AGILITÉ : <span id="number">10</span></span><br>
+                            <span id="Perception">PERCEPTION : <span id="number">10</span></span>
+                        </div>
+                        <div class="Box11">
+                            <span id="Endurance">ENDURANCE : <span id="number">10</span></span><br>
+                            <span id="Intelligence">INTELLIGENCE : <span id="number">10</span></span>
+                        </div>
                     </div>
                 </div>
             </div>

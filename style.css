@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'ZUDJUICE';
+    src: url('ZUDJUICE.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'ZUDJUICE', sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,13 +16,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     /* Pour centrer la div verticalement */
     background-image: url('images.jpg');
-    background-size: cover;
+    background-size: cover !important;
     /* Ajuste la taille de l'image pour couvrir tout l'élément */
     background-position: center;
+    background-repeat: no-repeat;
+    /* Empêche la répétition de l'image de fond */
     /* Centre l'image */
+}
+
+#reboot {
+    margin-left: 10px;
+    /* Ajout d'une marge entre le titre et le bouton */
+}
+
+#reboot span {
+    writing-mode: vertical-lr;
 }
 
 .titre {
@@ -20,10 +41,14 @@ body {
     background-color: #2e6994;
     color: white;
     padding: 15px;
+    display: flex;
+    margin-bottom: 20px;
 }
 
 .bleu {
     display: flex;
+    flex-wrap: wrap;
+    /* Permet aux éléments flexibles de passer à la ligne si nécessaire */
 }
 
 .container {
@@ -45,6 +70,57 @@ body {
     margin-right: 10px;
     margin-left: 10px;
 }
+
+@media screen and (max-width: 800px) {
+    .bleu {
+        flex-direction: column;
+        /* Met les éléments flexibles dans une colonne */
+    }
+
+    .container,
+    .containerGold,
+    .titre {
+        width: auto;
+        /* Annule la largeur définie précédemment */
+        margin-right: 5px;
+        /* Réinitialise la marge droite */
+        margin-left: 5px;
+        /* Réinitialise la marge gauche */
+        margin-bottom: 10px;
+        /* Ajoute une marge entre les éléments en mode colonne */
+        font-size: small !important;
+    }
+
+    button {
+        font-size: small !important;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1100px) {
+    .bleu {
+        flex-direction: column;
+        /* Met les éléments flexibles dans une colonne */
+    }
+
+    .container,
+    .containerGold,
+    .titre {
+        width: auto;
+        /* Annule la largeur définie précédemment */
+        margin-right: 5px;
+        /* Réinitialise la marge droite */
+        margin-left: 5px;
+        /* Réinitialise la marge gauche */
+        margin-bottom: 10px;
+        /* Ajoute une marge entre les éléments en mode colonne */
+        font-size: medium !important;
+    }
+
+    button {
+        font-size: medium !important;
+    }
+}
+
 
 .MissionsInv {
     display: grid;
@@ -349,4 +425,150 @@ button:hover {
     background-size: cover;
     transform: rotate(180deg);
     /* Tourner l'image de 180 degrés */
+}
+
+.containerGold {
+    opacity: 0.7;
+    background-color: #2f2f2f;
+    color: #f29f17;
+    height: 65vh;
+    width: calc((65vh * 11.5) / 16.5);
+    padding: 30px;
+    box-sizing: border-box;
+    /* Inclut le padding dans la taille de l'élément */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Masque le contenu qui dépasse */
+    font-size: large;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 2px solid #f29f17;
+}
+
+.MissionsGold {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 7fr 3.5fr 6fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "HeadGold HeadGold HeadGold"
+        "MIDGold MIDGold MIDGold"
+        "BodyGold BodyGold BodyGold";
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Ajoute des barres de défilement si nécessaire */
+    box-sizing: border-box;
+}
+
+
+.HeadGold {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Box20 Box21"
+        "Box22 Box23"
+        "Box24 Box24";
+    grid-area: HeadGold;
+    border-bottom: 2px solid #f29f17;
+}
+
+.Box20 {
+    justify-self: left;
+    align-self: center;
+    grid-area: Box20;
+}
+
+.Box21 {
+    justify-self: right;
+    align-self: center;
+    grid-area: Box21;
+}
+
+.Box22 {
+    justify-self: left;
+    align-self: center;
+    grid-area: Box22;
+}
+
+.Box23 {
+    justify-self: center;
+    align-self: center;
+    grid-area: Box23;
+}
+
+.Box24 {
+    line-height: 2;
+    justify-self: left;
+    align-self: center;
+    grid-area: Box24;
+}
+
+.MIDGold {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Box25 Box26";
+    grid-area: MIDGold;
+}
+
+.Box25 {
+    line-height: 2;
+    justify-self: left;
+    align-self: center;
+    grid-area: Box25;
+}
+
+.Box26 {
+    justify-self: right;
+    align-self: center;
+    grid-area: Box26;
+}
+
+.BodyGold {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Box27 Box28";
+    grid-area: BodyGold;
+    border-top: 2px solid #f29f17;
+    border-bottom: 2px solid #f29f17;
+}
+
+.Box27 {
+    line-height: 2;
+    justify-self: left;
+    align-self: center;
+    grid-area: Box27;
+}
+
+.Box28 {
+    line-height: 2;
+    justify-self: center;
+    align-self: center;
+    grid-area: Box28;
+}
+
+.Box28 button,
+.Box22 button {
+    background-color: #2f2f2f;
+    color: #f29f17;
+}
+
+.Box28 button:hover,
+.Box22 button:hover {
+    color: white;
 }
